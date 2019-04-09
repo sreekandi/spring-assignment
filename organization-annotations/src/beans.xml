@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:component-scan base-package="com" />
+    <util:list id="directors">
+           <value>directors1</value>
+           <value>directors2</value>
+           <value>directors3</value>
+           <value>directors4</value>
+     </util:list>
+    <util:list id="branches">
+           <value>branche1</value>
+           <value>branche2</value>
+           <value>branche3</value>
+           <value>branche4</value>
+     </util:list>
+    <util:map id="brancchwisedirectors">
+            <entry key="branch1" value="director1" />
+           <entry key="branch2" value="director2" />
+        <entry key="branch3" value="director3" />
+        <entry key="branch4" value="director4" />
+    </util:map>
+    
+    <util:properties id="ip" location="ip.properties"/>    
+    <util:properties id="database" location="dbconfig.properties"/>
+ 
+
+</beans>

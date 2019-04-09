@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+<bean id = "adressdetails" class = "com.capgemini.spring.organization.Address">
+        <constructor-arg index = "0" value = "331" type="int"/>
+        <constructor-arg index = "1" value = "balaji nagar" type="String"/>
+        <constructor-arg index = "2" value = "Tangutur" type="String"/>
+	<constructor-arg index = "3" value = "AP" type="String"/>
+ 	<constructor-arg index = "4" value = "523276" type="int"/>
+    </bean>
+
+<bean id = "details" class = "com.capgemini.spring.organization.Organization">
+        <constructor-arg index = "0" value = "101" type="int"/>
+        <constructor-arg index = "1" value = "All india" type="String"/>
+        <constructor-arg index = "2" value = "250000" type="double"/>
+	<constructor-arg index = "3" ref = "adressdetails"/>
+	<constructor-arg index = "4">
+		<list>
+			<value>directory1</value>
+			<value>directory2</value>
+			<value>directory3</value>
+		</list>
+	</constructor-arg>
+	<constructor-arg index = "5">
+		<set>
+			<value>managers</value>
+			<value>analyst</value>
+			<value>developers</value>
+		</set>
+	</constructor-arg>
+	<constructor-arg index = "6">
+		<map>
+			<entry key = "managers" value ="sree"/>
+			<entry key = "analyst" value = "vidhya"/>
+			<entry key = "developers" value = "shiva"/>
+		</map>
+	</constructor-arg>
+	<constructor-arg index = "7" ref ="ip"/>
+	<constructor-arg index = "8" ref="database"/>
+     </bean>
+	<util:properties id="ip" location="ip.properties"/>
+	<util:properties id="database" location="dbconfig.properties"/>
+</beans>
+
